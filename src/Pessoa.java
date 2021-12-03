@@ -3,15 +3,9 @@ public class Pessoa implements InterfacePessoa {
   private String nome;
   private String Telefone;
   private String Endereco;
-  private Pessoa[] lista_contato;
+  protected Pessoa[] lista_contato;
   private int max = 10;
-  private int pointer = 0;
-
-  public Pessoa(String nome, String telefone, String email, String endereco) {
-    this.nome = "nome";
-    this.Telefone = "telefone";
-    this.Endereco = "endereco";
-  }
+  protected int pointer = 0;
 
   public Pessoa() {
 
@@ -32,26 +26,26 @@ public class Pessoa implements InterfacePessoa {
   }
 
   @Override
-  public void Alterar(Pessoa contatoAntigo, Pessoa contatoNovo) {
+  public void Alterar(int i, Pessoa contatoAntigo) {
 
-    for (int i = 0; i < pointer; i++) {
+    for (i = 0; i < pointer; i++) {
       if (contatoAntigo.equals(lista_contato[i])) {
-        lista_contato[i].setNome(contatoNovo.getNome());
-        lista_contato[i].setEndereco(contatoNovo.getEndereco());
-        lista_contato[i].setTelefone(contatoNovo.getTelefone());
+        lista_contato[i].setNome("");
+        lista_contato[i].setEndereco("");
+        lista_contato[i].setTelefone("");
       }
     }
   }
 
   @Override
-  public void Excluir(Pessoa p) {
+  public void Excluir(int id) {
 
     for (int i = 0; i < pointer; i++) {
-      if (p.equals(lista_contato[i])) {
-        lista_contato[i].setNome(null);
-        lista_contato[i].setEndereco(null);
-        lista_contato[i].setTelefone(null);
-      }
+
+      lista_contato[i].setNome(null);
+      lista_contato[i].setEndereco(null);
+      lista_contato[i].setTelefone(null);
+
     }
   }
 

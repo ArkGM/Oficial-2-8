@@ -2,9 +2,9 @@ public interface InterfacePessoa {
 
   void incluir(Pessoa p);
 
-  void Alterar(Pessoa p, Pessoa c);
+  void Alterar(int i, Pessoa c);
 
-  void Excluir(Pessoa p);
+  void Excluir(int id);
 
   void Listar();
 
